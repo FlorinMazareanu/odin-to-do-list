@@ -20,15 +20,31 @@ import { closeAddItemDialog } from "./functions/closeAddItemDialog";
 import { removeAddItemForms } from "./functions/removeAddItemForms";
 import { generateNewTaskForm } from "./functions/generateNewTaskForm";
 import { generateNewProjectForm } from "./functions/generateNewProjectForm";
+import { loadTasks } from "./functions/loadTasks";
+import { loadProjects } from "./functions/loadProjects";
+import { checkIfTaskOrProject } from "./functions/checkIfTaskOrProject";
 
 //creating a new project called "Not in a project"
 let newProject = createProjectObject(0, "Not in a project");
-console.log(newProject);
+//console.log(newProject);
 
 //inserting the default "Not in a project" data into localStorage
 addProjectInLocalStorage(newProject.id, newProject);
 
-console.log(addItemElem);
+//test
+//console.log("testing if task or project")
+Object.entries(localStorage).forEach((item) => {
+    let rez = checkIfTaskOrProject(item);
+    //console.log("item:");
+    //console.log(item);
+    //console.log(rez);
+});
+
+//loading all tasks from all projects:
+loadTasks(0);
+
+//loading the project list
+loadProjects();
 
 //event listeners for the DOM elements
 

@@ -4,7 +4,7 @@ import { checkMaxId } from "./checkMaxId";
 
 //this function generated the "New task" form in the "add item" dialog
 function generateNewTaskForm(form) {
-    console.log("generateNewTaskForm");
+    //console.log("generateNewTaskForm");
 
     //DOM elements variables
 
@@ -66,7 +66,7 @@ function generateNewTaskForm(form) {
 
     //adding event listener on the "ADD TASK" button
     addButton.addEventListener("pointerdown", () => {
-        console.log("add item");
+        //console.log("add item");
 
         //checking max id in localStorage (so the next item will not use a used id)
         let maxId = checkMaxId();

@@ -10,7 +10,6 @@ function createProjectObject(id, name) {
 
     //creating a new instance of Project object
     let newProject = new Project(id, name);
-    console.log(newProject);
     return newProject;
 }
 

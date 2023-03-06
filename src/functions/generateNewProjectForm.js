@@ -1,5 +1,5 @@
 function generateNewProjectForm(form) {
-    console.log("generateNewProjectForm");
+    //console.log("generateNewProjectForm");
 }
 
 export { generateNewProjectForm };

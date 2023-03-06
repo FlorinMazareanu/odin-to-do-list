@@ -17,11 +17,20 @@ let addProjectElem = document.getElementById("add-modal-project");
 //the form can either be for adding a task or a project
 let modalContentFormElem = document.getElementById("modal-content-form");
 
+//element where tasks are loaded
+let allTasksElem = document.getElementById("all-tasks");
+
+//the place where the project list will load
+let allProjectsElem = document.getElementById("planning-projects-list");
+
+
 export {
     addItemElem,
     addItemDialogElem,
     addItemDialogCloseElem,
     addTaskElem,
     addProjectElem,
-    modalContentFormElem
+    modalContentFormElem,
+    allTasksElem,
+    allProjectsElem
 }
