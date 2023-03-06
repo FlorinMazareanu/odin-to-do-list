@@ -1,5 +1,5 @@
 //plus sign to add tasks and projects
-let addItemElem = document.getElementById("planning-add-h3");
+let addItemElem = document.getElementById("planning-add-button");
 
 //dialog that's opened by the "+" sign
 let addItemDialogElem = document.getElementById("add-dialog-open");
