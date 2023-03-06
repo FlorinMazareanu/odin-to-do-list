@@ -1,3 +1,5 @@
+import { addTaskInLocalStorage } from "./addTaskInLocalStorage";
+import { createTaskObject } from "./createTaskObject"
 //this function generated the "New task" form in the "add item" dialog
 function generateNewTaskForm(form) {
     console.log("generateNewTaskForm");
@@ -61,6 +63,11 @@ function generateNewTaskForm(form) {
     //adding options to the "inProject" select
 
     //adding event listener on the "ADD TASK" button
+    addButton.addEventListener("pointerdown", () => {
+        console.log("add item");
+        let newTask = createTaskObject("idtest", titleInput.value, descriptionInput.value, dueDateInput.value, "projecttest", "no");
+        addTaskInLocalStorage("idtest", newTask);
+    });
 
 }
 

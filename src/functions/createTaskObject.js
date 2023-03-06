@@ -14,6 +14,7 @@ function createTaskObject(id, title, description, dueDate, inProject, isDone) {
 
     //creating a new instance of Task object
     let newTask = new Task(id, title, description, dueDate, inProject, isDone);
+    console.log(newTask);
     return newTask;
 }
 
