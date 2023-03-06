@@ -1,0 +1,26 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    border: 1px solid black;
+}
+.content {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+}
+.content-planning {
+    border: 1px solid black;
+    width: 25vw;
+}
+#planning-add-h3 {
+    font-size: 5rem;
+    font-weight :900;
+}
+.content-todos {
+    border: 1px solid black;
+    width: 75vw;
+}

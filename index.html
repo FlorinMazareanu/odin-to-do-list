@@ -1,11 +1,56 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Getting Started</title>
-    <script src="https://unpkg.com/lodash@4.17.20"></script>
-  </head>
-  <body>
-    <script src="./src/index.js"></script>
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Odin Project - To Do List</title>
+    <link rel="stylesheet" href="./styles/main-style.css">
+    <link href="assets/fontawesome-free-6.2.1-web/css/fontawesome.css" rel="stylesheet">
+    <link href="assets/fontawesome-free-6.2.1-web/css/brands.css" rel="stylesheet">
+    <link href="assets/fontawesome-free-6.2.1-web/css/solid.css" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1 class="header-title">The Odin Project - To Do List</h1>
+    </div>
+    <div class="content">
+        <div class="content-planning">
+            <div class="planning-list">
+                <div class="planning-home">
+                    <h3 id="planning-home-h3">All tasks</h3>
+                </div>
+                <div class="planning-projects">
+                    <h3 id="planning-projects-h3">Tasks in project:</h3>
+                    <div id="planning-projects-list">
+
+                    </div>
+                </div>
+            </div>
+            <div class="planning-add">
+                <h3 id="planning-add-h3">+</h3>
+            </div>
+        </div>
+        <div class="content-todos">
+            <!--<i class="fa-regular fa-calendar-days"></i>-->
+            <div id="all-todos"></div>
+        </div>
+    </div>
+    <dialog closed id="add-dialog">
+        <div class="modal-header">
+            <h2>Create a new...</h2>
+            <h2 id="add-dialog-close">X</h2>
+        </div>
+        <div class="modal-content">
+            <div class="modal-content-list">
+                <h3 id="add-modal-todo">To do</h3>
+                <h3 id="add-modal-project">Project</h3>
+            </div>
+            <div id="modal-content-form">
+
+            </div>
+        </div>
+    </dialog>
+    <script src="./dist/main.js"></script>
+</body>
 </html>
