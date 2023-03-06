@@ -18,6 +18,4 @@ function createTaskObject(id, title, description, dueDate, inProject, isDone) {
     return newTask;
 }
 
-export {
-    createTaskObject
-}
+export { createTaskObject };

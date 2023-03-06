@@ -1,5 +1,7 @@
 import { addTaskInLocalStorage } from "./addTaskInLocalStorage";
 import { createTaskObject } from "./createTaskObject"
+import { checkMaxId } from "./checkMaxId";
+
 //this function generated the "New task" form in the "add item" dialog
 function generateNewTaskForm(form) {
     console.log("generateNewTaskForm");
@@ -65,8 +67,14 @@ function generateNewTaskForm(form) {
     //adding event listener on the "ADD TASK" button
     addButton.addEventListener("pointerdown", () => {
         console.log("add item");
-        let newTask = createTaskObject("idtest", titleInput.value, descriptionInput.value, dueDateInput.value, "projecttest", "no");
-        addTaskInLocalStorage("idtest", newTask);
+
+        //checking max id in localStorage (so the next item will not use a used id)
+        let maxId = checkMaxId();
+        let idToInsert = maxId + 1;
+
+        //creating a new Task and adding it into localStorage
+        let newTask = createTaskObject(idToInsert, titleInput.value, descriptionInput.value, dueDateInput.value, "projecttest", "no");
+        addTaskInLocalStorage(idToInsert, newTask);
     });
 
 }

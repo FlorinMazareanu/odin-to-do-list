@@ -12,19 +12,21 @@ from "./domVariables";
 
 //importing functions
 import { createTaskObject } from "./functions/createTaskObject";
+import { createProjectObject } from "./functions/createProjectObject";
 import { addTaskInLocalStorage } from "./functions/addTaskInLocalStorage";
+import { addProjectInLocalStorage } from "./functions/addProjectInLocalStorage";
 import { openAddItemDialog } from "./functions/openAddItemDialog";
 import { closeAddItemDialog } from "./functions/closeAddItemDialog"; 
 import { removeAddItemForms } from "./functions/removeAddItemForms";
 import { generateNewTaskForm } from "./functions/generateNewTaskForm";
 import { generateNewProjectForm } from "./functions/generateNewProjectForm";
 
-//creating a new Task
-let newTask = createTaskObject(1, "fa curat", "treci la treaba", "azi", "curatenie", "nu");
-console.log(newTask);
+//creating a new project called "Not in a project"
+let newProject = createProjectObject(0, "Not in a project");
+console.log(newProject);
 
-//inserting in localStorage
-addTaskInLocalStorage(newTask.id, newTask);
+//inserting the default "Not in a project" data into localStorage
+addProjectInLocalStorage(newProject.id, newProject);
 
 console.log(addItemElem);
 
