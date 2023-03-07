@@ -15,6 +15,7 @@ function loadProjects() {
     //if they are projects, they are loaded
     //checkIfTaskOrProject is used to check if project
     Object.entries(localStorage).forEach((item) => {
+
         let rez = checkIfTaskOrProject(item);
         if (rez == "project") {
 
@@ -23,10 +24,14 @@ function loadProjects() {
             let project = document.createElement("h3");
             let projectDelete = document.createElement("i");
 
-            //adding elements to DOM
-            allProjectsElem.appendChild(projectContainer);
-            projectContainer.appendChild(project);
-            if (JSON.parse(item[1]).id > 0) {
+            //adding elements to DOM (except "selected-project" that I mentioned in index.js)
+            if (JSON.parse(item[0]) != 1) {
+                allProjectsElem.appendChild(projectContainer);
+                projectContainer.appendChild(project);
+            }
+            
+            //the default project "Not in project" can not be deleted
+            if (JSON.parse(item[1]).id > 1) {
                 projectContainer.appendChild(projectDelete);
             }
             

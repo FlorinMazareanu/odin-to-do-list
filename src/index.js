@@ -32,6 +32,15 @@ let newProject = createProjectObject(0, "Not in a project");
 //inserting the default "Not in a project" data into localStorage
 addProjectInLocalStorage(newProject.id, newProject);
 
+//creating a new project called "selected-project"
+//it's purpose is tracking the selected project
+//used to load only some tasks after edit/delete
+//and not all of them
+let selectedProject = createProjectObject(1, "selected-project");
+
+//inserting the default "selected-project" data into localStorage
+addProjectInLocalStorage(selectedProject.id, selectedProject);
+
 //loading all tasks from all projects:
 loadTasks(0);
 
