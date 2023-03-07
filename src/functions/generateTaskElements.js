@@ -1,5 +1,6 @@
 import { allTasksElem } from "../domVariables";
 import { generateDetailsDialog } from "./generateDetailsDialog";
+import { toggleTaskCompletion } from "./toggleTaskCompletion";
 //this function generates the elements of the tasks
 //it's used by loadTasks.js
 
@@ -88,9 +89,31 @@ function generateTaskElements(item) {
     detailsE.classList.add("item-element");
     dueDateE.classList.add("item-element");
     editE.classList.add("item-element");
-    deleteE.classList.add("item-element");    
+    deleteE.classList.add("item-element");
+    
+    //making the checkbox toggled when the task loads
+    if (JSON.parse(item[1]).isDone == "yes") {
+        checkBoxE.checked = true;
+        console.log("should be checked");
+    }
+    else {
+        console.log("should be unchecked");
+        checkBoxE.checked = false;
+    }
 
     //adding event listeners to the checkbox
+    checkBoxE.addEventListener("change", () => {
+        let checkboxStatus = "";
+        if (checkBoxE.checked) {
+            console.log("checked");
+            checkboxStatus = "checked";
+        }
+        else {
+            console.log("not checked");
+            checkboxStatus = "unchecked";
+        }
+        toggleTaskCompletion(item, checkboxStatus);
+    });
 
     //adding event listeners to the details button
     detailsE.addEventListener("pointerdown", () => {

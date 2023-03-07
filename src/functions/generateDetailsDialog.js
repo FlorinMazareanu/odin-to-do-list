@@ -5,6 +5,9 @@ function generateDetailsDialog(item) {
 
     //console.log(detailsDialogE);
 
+    
+
+
     //details dialog containers
     let detailsDialogHeaderContainer = document.createElement("div");
     let detailsDialogTitleContainer = document.createElement("div");
@@ -26,6 +29,9 @@ function generateDetailsDialog(item) {
     let detailsDialogE = document.getElementById(`details-dialog-${JSON.parse(item[1]).id}`);
     //let editDialogE = document.createElement("dialog");
     //let deleteDialogE = document.createElement("dialog");
+
+    //removing current dialog to avoid duplicates when the same item "details" button is clicked
+    detailsDialogE.innerHTML = "";
     
    
     let detailsDialogTitleText = document.createElement("p");
