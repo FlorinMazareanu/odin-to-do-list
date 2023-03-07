@@ -6,6 +6,9 @@ body {
 }
 .header {
     border: 1px solid black;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 .content {
     border: 1px solid black;
@@ -15,6 +18,29 @@ body {
 .content-planning {
     border: 1px solid black;
     width: 25vw;
+    display: flex;
+    flex-direction: column;
+}
+.planning-list {
+    display: flex;
+    flex-direction: column;
+}
+.planning-home {
+    display: flex;
+    flex-direction: column;
+}
+.planning-projects {
+    display: flex;
+    flex-direction: column;
+}
+#planning-projects-h3 {
+    display: flex;
+    flex-direction: column;
+}
+#planning-projects-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0px 0px 1rem;
 }
 #planning-add-h3 {
     font-size: 5rem;
