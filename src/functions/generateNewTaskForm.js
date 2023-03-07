@@ -76,7 +76,11 @@ function generateNewTaskForm(form) {
             //console.log(item);
             let option = document.createElement("option");
             option.innerHTML = JSON.parse(item[1]).name;
-            inProjectSelect.add(option);
+            //selected-project should not be here in options
+            if (JSON.parse(item[1]).name != "selected-project") {
+                inProjectSelect.add(option);
+            }
+            
         }
     });
 

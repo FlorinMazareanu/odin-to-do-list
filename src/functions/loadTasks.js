@@ -10,11 +10,6 @@ function loadTasks(check, project) {
     //if it's 1, only one project will load it's tasks
     //console.log(allTasksElem);
 
-    //looking in the key of 1 in localStorage
-    if (localStorage.getItem(1) != `{"id":1,"name":"selected-project"}`) {
-        //console.log("a project is selected in loadTasks");
-    }
-
     if (check == 0) {
 
         //removing the tasks from the page
