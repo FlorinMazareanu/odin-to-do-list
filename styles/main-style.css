@@ -18,7 +18,8 @@ body {
     padding: 0px;
     display: flex;
     flex-direction: column;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     font-family: 'Cedarville Cursive', cursive;
     font-family: 'Roboto', sans-serif;
     width: 100vw;
@@ -112,7 +113,7 @@ body {
     cursor: pointer;
 }
 .content-tasks {
-    background-color: var(--content-tasks-color);
+    background-color: var((--planning-color));
     width: 75vw;
     border: 1px solid black;
 }
@@ -128,7 +129,7 @@ body {
     border-radius: 0.5rem;
     align-items: center;
     justify-content: space-between;
-    margin: 1rem;
+    margin: 1rem 2rem 1rem 1rem;
 }
 .item-container:hover {
     background-color: var(--hover-color);
