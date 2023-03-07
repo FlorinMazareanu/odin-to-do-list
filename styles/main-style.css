@@ -156,6 +156,10 @@ body {
     border-color: var(--button-color);
     cursor: pointer;
 }
+#add-dialog-open {
+    width: 75vw;
+    height: 75vh;
+}
 .details-dialog-header-container {
     display: flex;
     flex-direction: row;
@@ -177,6 +181,10 @@ body {
     flex-direction: column;   
     align-items: flex-start;
     justify-content: center;
+}
+.details-container dialog {
+    width: 75vw;
+    height: 75vh;
 }
 
 /* media queries*/
@@ -216,6 +224,10 @@ body {
         justify-content: flex-start;
         align-items: center;
         width: 100%;
+        overflow: scroll;
+    }
+    .content-tasks {
+        overflow: scroll;
     }
     .planning-projects {
         text-align: center;
@@ -237,5 +249,11 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+    }
+    .content-planning {
+        overflow: scroll;
+    }
+    .content-tasks {
+        overflow: scroll;
     }
   }
