@@ -88,6 +88,7 @@ function generateTaskElements(item) {
     detailsE.classList.add("item-element");
     dueDateE.classList.add("item-element");
     deleteE.classList.add("item-element");
+    detailsDialogE.classList.add("details-dialog");
     
     //making the checkbox toggled when the task loads
     if (JSON.parse(item[1]).isDone == "yes") {

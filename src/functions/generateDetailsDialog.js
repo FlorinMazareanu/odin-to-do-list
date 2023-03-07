@@ -31,11 +31,11 @@ function generateDetailsDialog(item) {
     let detailsDialogDescriptionText = document.createElement("p");
     let detailsDialogProjectText = document.createElement("p");
     let detailsDialogDueDateText = document.createElement("p");
-    let detailsDialogTitleInfo = document.createElement("p");
+    let detailsDialogTitleInfo = document.createElement("h2");
     let detailsDialogDescriptionInfo = document.createElement("p");
     let detailsDialogProjectInfo = document.createElement("p");
     let detailsDialogDueDateInfo = document.createElement("p");
-    let detailsDialogExitE = document.createElement("p");
+    let detailsDialogExitE = document.createElement("h2");
 
     //appending elements into their containers
     //detailsContainer.appendChild(detailsDialogE);
@@ -89,6 +89,7 @@ function generateDetailsDialog(item) {
     detailsDialogInfoContainer.classList.add("details-dialog-info-container");
     detailsDialogInfoLeftContainer.classList.add("details-dialog-info-left-container");
     detailsDialogInfoRightContainer.classList.add("details-dialog-info-right-container");
+    detailsDialogExitE.classList.add("details-dialog-close");
 
     //showing the dialog
     detailsDialogE.showModal();

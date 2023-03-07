@@ -18,7 +18,7 @@ body {
     padding: 0px;
     display: flex;
     flex-direction: column;
-    overflow: hidden;
+    overflow: scroll;
     font-family: 'Cedarville Cursive', cursive;
     font-family: 'Roboto', sans-serif;
     width: 100vw;
@@ -114,6 +114,7 @@ body {
 .content-tasks {
     background-color: var(--content-tasks-color);
     width: 75vw;
+    border: 1px solid black;
 }
 #all-tasks {
     
@@ -159,28 +160,44 @@ body {
 #add-dialog-open {
     width: 90vw;
     height: 75vh;
+    border-radius: 0.5rem;
+}
+.details-dialog {
+    border-radius: 0.5rem;
 }
 .details-dialog-header-container {
+
+    background-color: var(--header-color);
+    color: var(--header-font-color);
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: start;
     justify-content: space-between;
+    width: 100%;
+}
+
+.details-dialog-header-container h2 {
+    margin: 2rem;
 }
 .details-dialog-info-container {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
 }
 .details-dialog-info-left-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    margin: 1rem;
 }
 .details-dialog-info-right-container {
     display: flex;
     flex-direction: column;   
     align-items: flex-start;
     justify-content: center;
+    margin: 1rem;
 }
 .details-container dialog {
     width: 90vw;
@@ -271,6 +288,10 @@ dialog {
 .form-group .form-input {
     width: 100%;
     font-size: 2rem;
+}
+
+.details-dialog-close {
+    cursor: pointer;
 }
 
 /* media queries*/
