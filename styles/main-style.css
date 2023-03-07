@@ -190,7 +190,6 @@ body {
 .modal-content {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
     align-items: flex-start;
 }
 .modal-content-list {
@@ -212,10 +211,26 @@ body {
 #add-modal-task {
     font-size: 2rem;
     cursor: pointer;
+    background-color: var(--hover-color);
+    border: 1px solid var(--hover-color);;
+    border-radius: 0.5rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
 #add-modal-project {
     font-size: 2rem;
     cursor: pointer;
+    background-color: var(--hover-color);
+    border: 1px solid var(--hover-color);;
+    border-radius: 0.5rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
 }
 
 #add-dialog-open {
