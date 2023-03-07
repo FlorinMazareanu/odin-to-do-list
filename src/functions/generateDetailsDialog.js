@@ -1,4 +1,4 @@
-
+import { closeDetailsDialog } from "./closeDetailsDialog";
 
 //this function generates elements in the details dialog
 function generateDetailsDialog(item) {
@@ -82,6 +82,11 @@ function generateDetailsDialog(item) {
     detailsDialogDueDateInfo.innerHTML = `${JSON.parse(item[1]).dueDate}`;
 
     //adding id's to the elemnts
+
+    //adding event listener to close the modal
+    detailsDialogExitE.addEventListener("pointerdown", () => {
+        closeDetailsDialog(detailsDialogE);
+    });
 
 
     //adding properties, input types and classes
