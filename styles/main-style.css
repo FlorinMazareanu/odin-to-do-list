@@ -43,6 +43,11 @@ body {
     flex-direction: column;
     margin: 0px 0px 0px 1rem;
 }
+.project-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 #planning-add-h3 {
     font-size: 5rem;
     font-weight :900;

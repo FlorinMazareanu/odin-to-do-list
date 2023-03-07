@@ -3,7 +3,8 @@ import { createProjectObject } from "./createProjectObject";
 import { checkMaxId } from "./checkMaxId";
 import { addItemDialogElem } from "../domVariables";
 import { closeAddItemDialog } from "./closeAddItemDialog";
-
+import { loadProjects } from "./loadProjects";
+import { allProjectsElem } from "../domVariables";
 
 //this function generated the "New project" form in the "add item" dialog
 function generateNewProjectForm(form) {
@@ -51,8 +52,10 @@ function generateNewProjectForm(form) {
         let newTask = createProjectObject(idToInsert, nameInput.value);
         addProjectInLocalStorage(idToInsert, newTask);
         
-        //closing the dialog
+        //closing the dialog, reloading projects
         closeAddItemDialog(addItemDialogElem);
+        allProjectsElem.innerHTML = "";
+        loadProjects();
     });
 }
 

@@ -4,6 +4,8 @@ import { checkMaxId } from "./checkMaxId";
 import { addItemDialogElem } from "../domVariables";
 import { closeAddItemDialog } from "./closeAddItemDialog";
 import { checkIfTaskOrProject } from "./checkIfTaskOrProject";
+import { loadTasks } from "./loadTasks";
+import { allTasksElem } from "../domVariables";
 
 //this function generated the "New task" form in the "add item" dialog
 function generateNewTaskForm(form) {
@@ -90,8 +92,10 @@ function generateNewTaskForm(form) {
         let newTask = createTaskObject(idToInsert, titleInput.value, descriptionInput.value, dueDateInput.value, inProjectSelect.value, "no");
         addTaskInLocalStorage(idToInsert, newTask);
 
-        //closing the dialog
+        //closing the dialog, reloading tasks
         closeAddItemDialog(addItemDialogElem);
+        allTasksElem.innerHTML = "";
+        loadTasks(0);
     });
 
 }

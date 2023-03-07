@@ -1,7 +1,8 @@
 import { allProjectsElem } from "../domVariables";
 import { checkIfTaskOrProject } from "./checkIfTaskOrProject";
 import { loadTasks } from "./loadTasks";
-//this functions oloads all the projects on the page
+import { deleteProject } from "./deleteProject";
+//this functions loads all the projects on the page
 //under "tasks in project" on the page
 
 function loadProjects() {
@@ -20,21 +21,35 @@ function loadProjects() {
             //defining DOM elements
             let projectContainer = document.createElement("div");
             let project = document.createElement("h3");
+            let projectDelete = document.createElement("i");
 
             //adding elements to DOM
             allProjectsElem.appendChild(projectContainer);
             projectContainer.appendChild(project);
+            if (JSON.parse(item[1]).id > 0) {
+                projectContainer.appendChild(projectDelete);
+            }
+            
 
             //adding text to each project
             project.innerHTML = JSON.parse(item[1]).name;
 
             //adding classes and id's
+            projectContainer.classList.add("project-container");
             project.id = `project-${JSON.parse(item[1]).id}`;
+            projectDelete.id = `project-delete-${JSON.parse(item[1]).id}`
+            projectDelete.classList.add("fa-solid");
+            projectDelete.classList.add("fa-trash-can");
 
             //adding event listeners to each project
             project.addEventListener("pointerdown", () => {
                 //will load tasks from this project
                 loadTasks(1, JSON.parse(item[1]).name);
+            });
+
+            //adding event listeners to the trash cans
+            projectDelete.addEventListener("pointerdown", () => {
+                deleteProject(item);
             });
 
         }

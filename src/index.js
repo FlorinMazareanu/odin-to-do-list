@@ -55,7 +55,7 @@ addItemElem.addEventListener("pointerdown", () => {
 
 //event listener to the X button to close the "add item" dialog
 addItemDialogCloseElem.addEventListener("pointerdown", () =>{
-    closeAddItemDialog(addItemDialogElem);
+    closeAddItemDialog(addItemDialogElem); 
 });
 
 //event listener for the "New task" option in the "add item" dialog
