@@ -47,6 +47,8 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     border-top: 1px solid var(--borders-color);
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 #planning-home-h3 {
     cursor: pointer;
@@ -80,12 +82,6 @@ body {
     cursor: zoom-in;
     align-items: flex-start;
     justify-content: center;
-}
-#planning-projects-h3:hover {
-    color: white;
-    text-decoration: underline;
-    font-weight: bold;
-    cursor: pointer; 
 }
 #planning-projects-list {
     display: flex;
