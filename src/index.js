@@ -54,6 +54,8 @@ loadProjects();
 //just like when the page is refreshed
 homeElem.addEventListener("pointerdown", () => {
     loadTasks(0);
+    //will also set "selected-project" to default, deselecting the selected project
+    localStorage.setItem(1, JSON.stringify(selectedProject));
 });
 
 //event listener for the "+" button 

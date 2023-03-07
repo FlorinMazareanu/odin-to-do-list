@@ -1,10 +1,28 @@
 import { allTasksElem } from "../domVariables";
+import { deleteProject } from "./deleteProject";
 import { generateDetailsDialog } from "./generateDetailsDialog";
 import { toggleTaskCompletion } from "./toggleTaskCompletion";
+import { deleteTask } from "./deleteTask";
 //this function generates the elements of the tasks
 //it's used by loadTasks.js
 
+//using "selected-project" to load only from that selected project
+//side-note: this is used to show the project's tasks right after editing/deleting a task
+//the "check" variable from loadTasks() does this for loading tasks after clicking a project's name
+
 function generateTaskElements(item) {
+
+    //looking in the key of 1 in localStorage
+    console.log("====================");
+    //console.log(localStorage.getItem(1));
+    if (localStorage.getItem(1) != `{"id":1,"name":"selected-project"}`) {
+        console.log("a project is selected in generateTaskElements:");
+        console.log(localStorage.getItem(1));
+    }
+    else {
+        console.log("no project is selected");
+    }
+
     //defining DOM elements that will be added later
     //the main container for the item:
     let itemContainer = document.createElement("div");
@@ -94,10 +112,10 @@ function generateTaskElements(item) {
     //making the checkbox toggled when the task loads
     if (JSON.parse(item[1]).isDone == "yes") {
         checkBoxE.checked = true;
-        console.log("should be checked");
+        //console.log("should be checked");
     }
     else {
-        console.log("should be unchecked");
+        //console.log("should be unchecked");
         checkBoxE.checked = false;
     }
 
@@ -105,11 +123,11 @@ function generateTaskElements(item) {
     checkBoxE.addEventListener("change", () => {
         let checkboxStatus = "";
         if (checkBoxE.checked) {
-            console.log("checked");
+            //console.log("checked");
             checkboxStatus = "checked";
         }
         else {
-            console.log("not checked");
+            //console.log("not checked");
             checkboxStatus = "unchecked";
         }
         toggleTaskCompletion(item, checkboxStatus);
@@ -124,6 +142,9 @@ function generateTaskElements(item) {
     //adding event listeners to the edit icon
 
     //adding event listeners to the delete icon
+    deleteContainer.addEventListener("pointerdown", () => {
+        deleteTask(item);
+    });
 }
 
 export { generateTaskElements };

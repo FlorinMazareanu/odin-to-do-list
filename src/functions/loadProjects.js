@@ -2,14 +2,13 @@ import { allProjectsElem } from "../domVariables";
 import { checkIfTaskOrProject } from "./checkIfTaskOrProject";
 import { loadTasks } from "./loadTasks";
 import { deleteProject } from "./deleteProject";
+import { addProjectInLocalStorage } from "./addProjectInLocalStorage";
 //this functions loads all the projects on the page
 //under "tasks in project" on the page
 
 function loadProjects() {
     //console.log("loading projects...");
     //console.log(allProjectsElem);
-
-    //
 
     //testing localStorage items
     //if they are projects, they are loaded
@@ -34,7 +33,6 @@ function loadProjects() {
             if (JSON.parse(item[1]).id > 1) {
                 projectContainer.appendChild(projectDelete);
             }
-            
 
             //adding text to each project
             project.innerHTML = JSON.parse(item[1]).name;
@@ -48,8 +46,10 @@ function loadProjects() {
 
             //adding event listeners to each project
             project.addEventListener("pointerdown", () => {
+                //setting up the selected project in the key of 1 of localStorage
+                localStorage.setItem(1, item[1]);
                 //will load tasks from this project
-                loadTasks(1, JSON.parse(item[1]).name);
+                loadTasks(1, JSON.parse(item[1]).name);              
             });
 
             //adding event listeners to the trash cans

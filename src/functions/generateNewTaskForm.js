@@ -69,11 +69,11 @@ function generateNewTaskForm(form) {
 
     //adding options to the "inProject" select
     Object.entries(localStorage).forEach((item) => {
-        console.log(item);
+        //console.log(item);
         let type = checkIfTaskOrProject(item);
         if (type == "project") {
-            console.log("gasit proiect:");
-            console.log(item);
+            //console.log("gasit proiect:");
+            //console.log(item);
             let option = document.createElement("option");
             option.innerHTML = JSON.parse(item[1]).name;
             inProjectSelect.add(option);

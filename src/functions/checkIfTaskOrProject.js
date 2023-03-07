@@ -3,10 +3,9 @@
 //to make sure that the right kind of item appears when asked for
 function checkIfTaskOrProject(item) {
     let typeOfItem = "";
-    //console.log("testing if task or project")
 
     let objToCheck = JSON.parse(item[1]);
-    //console.log(objToCheck);
+
     if (objToCheck.hasOwnProperty("name")) {
         typeOfItem = "project";
     }

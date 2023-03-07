@@ -10,6 +10,11 @@ function loadTasks(check, project) {
     //if it's 1, only one project will load it's tasks
     //console.log(allTasksElem);
 
+    //looking in the key of 1 in localStorage
+    if (localStorage.getItem(1) != `{"id":1,"name":"selected-project"}`) {
+        //console.log("a project is selected in loadTasks");
+    }
+
     if (check == 0) {
 
         //removing the tasks from the page
@@ -21,7 +26,7 @@ function loadTasks(check, project) {
             let rez = checkIfTaskOrProject(item);
             if (rez == "task") {
                 //console.log("incarca tot:");
-                console.log(item);
+                //console.log(item);
 
                 //generating task elements and loading them on the page
                 generateTaskElements(item);
@@ -33,17 +38,17 @@ function loadTasks(check, project) {
         //removing the tasks from the page
         removeTasks();
 
-        console.log("only tasks from the project will be loaded...");
-        console.log(project);
+        //console.log("only tasks from the project will be loaded...");
+        //console.log(project);
         //looping through localStorage to fish for tasks
-        console.log("looping...");
+        //console.log("looping...");
         Object.entries(localStorage).forEach((item) => {
             let rez = checkIfTaskOrProject(item);
 
             //condition to only show from the selected project
             if (rez == "task" && JSON.parse(item[1]).inProject == project) {
                 //console.log("item:");
-                console.log(item);
+                //console.log(item);
 
                 //generating task elements and loading them on the page
                 generateTaskElements(item);
