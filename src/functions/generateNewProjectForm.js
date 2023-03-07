@@ -40,6 +40,11 @@ function generateNewProjectForm(form) {
     nameInput.placeholder = "Name your project...";
 
     //adding id's and classes to the elements
+    nameGroup.classList.add("form-group");
+    buttonGroup.classList.add("form-group");
+    nameLabel.classList.add("form-label");
+    nameInput.classList.add("form-input");
+    addButton.classList.add("form-input");
 
     //adding event listener on the "ADD PROJECT" button
     addButton.addEventListener("pointerdown", () => {

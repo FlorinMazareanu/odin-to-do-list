@@ -66,6 +66,20 @@ function generateNewTaskForm(form) {
     descriptionInput.placeholder = "Describe the task...";
 
     //adding id's and classes to the elements
+    titleGroup.classList.add("form-group");
+    descriptionGroup.classList.add("form-group");
+    dueDateGroup.classList.add("form-group");
+    inProjectGroup.classList.add("form-group");
+    buttonGroup.classList.add("form-group");
+    titleLabel.classList.add("form-label");
+    descriptionLabel.classList.add("form-label");
+    dueDateLabel.classList.add("form-label");
+    inProjectLabel.classList.add("form-label");
+    inProjectSelect.classList.add("form-input")
+    titleInput.classList.add("form-input");
+    descriptionInput.classList.add("form-input");
+    dueDateInput.classList.add("form-input");
+    addButton.classList.add("form-input");
 
     //adding options to the "inProject" select
     Object.entries(localStorage).forEach((item) => {
