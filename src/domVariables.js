@@ -23,6 +23,8 @@ let allTasksElem = document.getElementById("all-tasks");
 //the place where the project list will load
 let allProjectsElem = document.getElementById("planning-projects-list");
 
+//the "home" button, with "All tasks"
+let homeElem = document.getElementById("planning-home-h3");
 
 export {
     addItemElem,
@@ -32,5 +34,6 @@ export {
     addProjectElem,
     modalContentFormElem,
     allTasksElem,
-    allProjectsElem
+    allProjectsElem,
+    homeElem
 }

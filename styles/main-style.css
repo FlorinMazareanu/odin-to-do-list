@@ -24,3 +24,25 @@ body {
     border: 1px solid black;
     width: 75vw;
 }
+.item-container {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    align-items: center;
+    justify-content: space-between;
+}
+.left-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+.right-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+.item-element {
+    margin: 0.5rem;
+}

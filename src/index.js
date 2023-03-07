@@ -6,7 +6,8 @@ import
     addItemDialogCloseElem,
     addTaskElem,
     addProjectElem,
-    modalContentFormElem
+    modalContentFormElem,
+    homeElem
 } 
 from "./domVariables";
 
@@ -31,15 +32,6 @@ let newProject = createProjectObject(0, "Not in a project");
 //inserting the default "Not in a project" data into localStorage
 addProjectInLocalStorage(newProject.id, newProject);
 
-//test
-//console.log("testing if task or project")
-Object.entries(localStorage).forEach((item) => {
-    let rez = checkIfTaskOrProject(item);
-    //console.log("item:");
-    //console.log(item);
-    //console.log(rez);
-});
-
 //loading all tasks from all projects:
 loadTasks(0);
 
@@ -47,6 +39,13 @@ loadTasks(0);
 loadProjects();
 
 //event listeners for the DOM elements
+
+//event listener for the "Home" button (labled "All tasks")
+//it loads all the tasks, regardless of project
+//just like when the page is refreshed
+homeElem.addEventListener("pointerdown", () => {
+    loadTasks(0);
+});
 
 //event listener for the "+" button 
 //to open the add task/project dialog
@@ -74,5 +73,8 @@ addProjectElem.addEventListener("pointerdown", () =>{
     removeAddItemForms(modalContentFormElem);
     generateNewProjectForm(modalContentFormElem);
 });
+
+//other event listeners will be added inside other pages, as they are for elements that are not yet generated
+//(like tasks/projects that are not yet added by the user)
 
 

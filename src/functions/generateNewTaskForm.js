@@ -1,6 +1,9 @@
 import { addTaskInLocalStorage } from "./addTaskInLocalStorage";
 import { createTaskObject } from "./createTaskObject"
 import { checkMaxId } from "./checkMaxId";
+import { addItemDialogElem } from "../domVariables";
+import { closeAddItemDialog } from "./closeAddItemDialog";
+import { checkIfTaskOrProject } from "./checkIfTaskOrProject";
 
 //this function generated the "New task" form in the "add item" dialog
 function generateNewTaskForm(form) {
@@ -15,7 +18,7 @@ function generateNewTaskForm(form) {
     let inProjectGroup = document.createElement("div");
     let buttonGroup = document.createElement("div");
 
-    //labels and inputs
+    //labels, inputs and button
     let titleLabel = document.createElement("p");
     let titleInput = document.createElement("input");
     let descriptionLabel = document.createElement("p");
@@ -63,6 +66,17 @@ function generateNewTaskForm(form) {
     //adding id's and classes to the elements
 
     //adding options to the "inProject" select
+    Object.entries(localStorage).forEach((item) => {
+        console.log(item);
+        let type = checkIfTaskOrProject(item);
+        if (type == "project") {
+            console.log("gasit proiect:");
+            console.log(item);
+            let option = document.createElement("option");
+            option.innerHTML = JSON.parse(item[1]).name;
+            inProjectSelect.add(option);
+        }
+    });
 
     //adding event listener on the "ADD TASK" button
     addButton.addEventListener("pointerdown", () => {
@@ -73,8 +87,11 @@ function generateNewTaskForm(form) {
         let idToInsert = maxId + 1;
 
         //creating a new Task and adding it into localStorage
-        let newTask = createTaskObject(idToInsert, titleInput.value, descriptionInput.value, dueDateInput.value, "projecttest", "no");
+        let newTask = createTaskObject(idToInsert, titleInput.value, descriptionInput.value, dueDateInput.value, inProjectSelect.value, "no");
         addTaskInLocalStorage(idToInsert, newTask);
+
+        //closing the dialog
+        closeAddItemDialog(addItemDialogElem);
     });
 
 }
