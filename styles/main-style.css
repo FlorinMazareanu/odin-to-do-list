@@ -1,8 +1,16 @@
 :root {
-    --first-color: #d63447; 
-    --second-color: #f57b51;    
-    --third-color: #f6eedf;   
-    --fourth-color: #d1cebd; 
+
+    --header-color: #303841;
+    --header-font-color: white;
+    --planning-color: white;
+    --planning-font-color: black;
+    --content-tasks-color: white;
+    --task-color: white;
+    --task-font-color:black;
+    --button-color: #303841;
+    --button-font-color: white;
+    --borders-color: black;
+    --hover-color: #d3d6db;
 }
 
 body {  
@@ -15,8 +23,8 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 .header {
-    background-color: var(--first-color);
-    color: var(--third-color);
+    background-color: var(--header-color);
+    color: var(--header-font-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,19 +36,26 @@ body {
     height: 90vh;
 }
 .content-planning {
-    background-color: var(--fourth-color);
+    background-color: var(--planning-color);
+    color: var(--planning-font-color);
     width: 25vw;
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: flex-start;
+    border: 1px solid var(--borders-color);
+}
+#planning-home-h3 {
+    cursor: pointer;
 }
 .planning-list {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
+    margin: 0px 0px 1rem 1rem;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    width: 100%;
 }
 .planning-home {
     display: flex;
@@ -49,10 +64,14 @@ body {
 .planning-projects {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 #planning-projects-h3 {
     display: flex;
     flex-direction: column;
+    cursor: zoom-in;
+    align-items: flex-start;
+    justify-content: center;
 }
 #planning-projects-list {
     display: flex;
@@ -62,30 +81,57 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 90%;
+}
+.project-container hr {
+    margin-right: 1rem;
+}
+.project-container h3 {
+    cursor: pointer;
+}
+#planning-project-list .fa-solid.fa-trash-can {
+    margin-left: 1rem;
+}
+.fa-solid.fa-trash-can {
+    cursor: pointer;
+}
+.planning-add {
+    width: 100%;
 }
 #planning-add-h3 {
     font-size: 5rem;
     font-weight :900;
 }
 #planning-add-button {
-    background-color: var(--first-color);
-    color: var(--third-color);
+    background-color: var(--button-color);
+    color: var(--button-font-color);
     width: 100%;
     height: 2rem;
+    font-weight: bold;
+    border-color: var(--button-color);
+    cursor: pointer;
 }
 .content-tasks {
-    background-color: var(--third-color);
+    background-color: var(--content-tasks-color);
     width: 75vw;
 }
 #all-tasks {
     
 }
 .item-container {
+    background-color: var(--task-color);
+    color: var(--task-font-color);
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
+    border: 1px solid var(--borders-color);
+    border-radius: 0.5rem;
     align-items: center;
     justify-content: space-between;
+    margin: 1rem;
+}
+.item-container:hover {
+    background-color: var(--hover-color);
+    box-shadow: #303841;
 }
 .left-container {
     display: flex;
@@ -103,8 +149,12 @@ body {
     margin: 0.5rem;
 }
 .details-container button {
-    background-color: var(--first-color);
-    color: var(--third-color);
+    background-color: var(--button-color);
+    color: var(--button-font-color);
+    border-radius: 0.5rem;
+    font-weight: bold;
+    border-color: var(--button-color);
+    cursor: pointer;
 }
 .details-dialog-header-container {
     display: flex;
@@ -132,11 +182,16 @@ body {
 /* media queries*/
 
 @media (max-width: 750px) {
+    .body {
+        overflow: scroll;
+    }
     .content {
         flex-direction: column;
+        justify-content: flex-start;
     }
     .content-planning {
         width: 100vw;
+        justify-content: space-between;
     }
     .content-tasks {
         width: 100vw;
@@ -153,11 +208,12 @@ body {
     }
     .header-title {
         font-size: 1.5rem;
+        cursor: zoom-in;
     }
     .content-planning {
         text-align: center;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         width: 100%;
     }
@@ -178,5 +234,8 @@ body {
   @media (max-height: 750px) {
     body {
         overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
   }
