@@ -43,6 +43,8 @@ function loadProjects() {
             projectDelete.id = `project-delete-${JSON.parse(item[1]).id}`
             projectDelete.classList.add("fa-solid");
             projectDelete.classList.add("fa-trash-can");
+            projectDelete.classList.add("project-delete");
+            project.classList.add("project-h3");
 
             //adding event listeners to each project
             project.addEventListener("pointerdown", () => {

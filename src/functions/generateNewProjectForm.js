@@ -45,6 +45,8 @@ function generateNewProjectForm(form) {
     nameLabel.classList.add("form-label");
     nameInput.classList.add("form-input");
     addButton.classList.add("form-input");
+    addButton.classList = "form-button-choice";
+    form.classList.add = "add-task-project-form";
 
     //adding event listener on the "ADD PROJECT" button
     addButton.addEventListener("pointerdown", () => {

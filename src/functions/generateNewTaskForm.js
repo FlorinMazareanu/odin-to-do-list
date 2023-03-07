@@ -80,6 +80,7 @@ function generateNewTaskForm(form) {
     descriptionInput.classList.add("form-input");
     dueDateInput.classList.add("form-input");
     addButton.classList.add("form-input");
+    addButton.classList = "form-button-choice";
 
     //adding options to the "inProject" select
     Object.entries(localStorage).forEach((item) => {
