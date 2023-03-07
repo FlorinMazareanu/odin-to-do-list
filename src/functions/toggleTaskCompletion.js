@@ -2,8 +2,7 @@ import { createTaskObject } from "./createTaskObject";
 import { addTaskInLocalStorage } from "./addTaskInLocalStorage";
 
 function toggleTaskCompletion(item, checkboxStatus) {
-    //console.log(item);
-    //console.log(JSON.parse(item[1]).id);
+
     let newTask = ""
     let id = JSON.parse(item[1]).id;
     let title = JSON.parse(item[1]).title;
@@ -23,7 +22,6 @@ function toggleTaskCompletion(item, checkboxStatus) {
 
     //adding into localStorage
     addTaskInLocalStorage(id, task);
-    //localStorage.setItem(id, JSON.stringify(task));
 }
 
 export { toggleTaskCompletion };

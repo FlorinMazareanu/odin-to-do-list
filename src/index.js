@@ -27,14 +27,13 @@ import { checkIfTaskOrProject } from "./functions/checkIfTaskOrProject";
 
 //creating a new project called "Not in a project"
 let newProject = createProjectObject(0, "Not in a project");
-//console.log(newProject);
 
 //inserting the default "Not in a project" data into localStorage
 addProjectInLocalStorage(newProject.id, newProject);
 
 //creating a new project called "selected-project"
 //it's purpose is tracking the selected project
-//used to load only some tasks after edit/delete
+//used to load only some tasks after delete
 //and not all of them
 let selectedProject = createProjectObject(1, "selected-project");
 

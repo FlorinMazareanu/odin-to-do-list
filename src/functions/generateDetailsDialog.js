@@ -3,11 +3,6 @@ import { closeDetailsDialog } from "./closeDetailsDialog";
 //this function generates elements in the details dialog
 function generateDetailsDialog(item) {
 
-    //console.log(detailsDialogE);
-
-    
-
-
     //details dialog containers
     let detailsDialogHeaderContainer = document.createElement("div");
     let detailsDialogTitleContainer = document.createElement("div");
@@ -27,8 +22,6 @@ function generateDetailsDialog(item) {
     //details dialog elements
     
     let detailsDialogE = document.getElementById(`details-dialog-${JSON.parse(item[1]).id}`);
-    //let editDialogE = document.createElement("dialog");
-    //let deleteDialogE = document.createElement("dialog");
 
     //removing current dialog to avoid duplicates when the same item "details" button is clicked
     detailsDialogE.innerHTML = "";
@@ -46,7 +39,6 @@ function generateDetailsDialog(item) {
 
     //appending elements into their containers
     //detailsContainer.appendChild(detailsDialogE);
-    //editContainer.appendChild(editDialogE);
     //deleteContainer.appendChild(deleteDialogE);
 
     //adding the containers for the details dialog
@@ -87,18 +79,10 @@ function generateDetailsDialog(item) {
     detailsDialogProjectInfo.innerHTML = `${JSON.parse(item[1]).inProject}`;
     detailsDialogDueDateInfo.innerHTML = `${JSON.parse(item[1]).dueDate}`;
 
-    //adding id's to the elemnts
-
     //adding event listener to close the modal
     detailsDialogExitE.addEventListener("pointerdown", () => {
         closeDetailsDialog(detailsDialogE);
     });
-
-
-    //adding properties, input types and classes
-    //detailsDialogE.close();
-    //editDialogE.close();
-    //deleteDialogE.close();
 
     //adding properties, input types and classes for details dialog
     detailsDialogHeaderContainer.classList.add("details-dialog-header-container");
@@ -106,6 +90,7 @@ function generateDetailsDialog(item) {
     detailsDialogInfoLeftContainer.classList.add("details-dialog-info-left-container");
     detailsDialogInfoRightContainer.classList.add("details-dialog-info-right-container");
 
+    //showing the dialog
     detailsDialogE.showModal();
 }
 

@@ -15,14 +15,10 @@ function loadTasks(check, project) {
         //removing the tasks from the page
         removeTasks();
 
-        //console.log("all tasks will be loaded...");
         //looping through localStorage to fish for tasks
         Object.entries(localStorage).forEach((item) => {
             let rez = checkIfTaskOrProject(item);
             if (rez == "task") {
-                //console.log("incarca tot:");
-                //console.log(item);
-
                 //generating task elements and loading them on the page
                 generateTaskElements(item);
             }
@@ -33,18 +29,11 @@ function loadTasks(check, project) {
         //removing the tasks from the page
         removeTasks();
 
-        //console.log("only tasks from the project will be loaded...");
-        //console.log(project);
-        //looping through localStorage to fish for tasks
-        //console.log("looping...");
         Object.entries(localStorage).forEach((item) => {
             let rez = checkIfTaskOrProject(item);
 
             //condition to only show from the selected project
             if (rez == "task" && JSON.parse(item[1]).inProject == project) {
-                //console.log("item:");
-                //console.log(item);
-
                 //generating task elements and loading them on the page
                 generateTaskElements(item);
             }

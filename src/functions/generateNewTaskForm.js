@@ -69,24 +69,19 @@ function generateNewTaskForm(form) {
 
     //adding options to the "inProject" select
     Object.entries(localStorage).forEach((item) => {
-        //console.log(item);
         let type = checkIfTaskOrProject(item);
         if (type == "project") {
-            //console.log("gasit proiect:");
-            //console.log(item);
             let option = document.createElement("option");
             option.innerHTML = JSON.parse(item[1]).name;
             //selected-project should not be here in options
             if (JSON.parse(item[1]).name != "selected-project") {
                 inProjectSelect.add(option);
-            }
-            
+            }      
         }
     });
 
     //adding event listener on the "ADD TASK" button
     addButton.addEventListener("pointerdown", () => {
-        //console.log("add item");
 
         //checking max id in localStorage (so the next item will not use a used id)
         let maxId = checkMaxId();

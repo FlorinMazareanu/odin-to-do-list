@@ -8,7 +8,6 @@ import { allProjectsElem } from "../domVariables";
 
 //this function generated the "New project" form in the "add item" dialog
 function generateNewProjectForm(form) {
-    //console.log("generateNewProjectForm");
 
     //DOM elements variables
 
