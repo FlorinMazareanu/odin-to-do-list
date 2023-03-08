@@ -222,6 +222,14 @@ body {
 .item-element {
     margin: 0.5rem;
 }
+.title-container {
+    overflow: hidden;
+    width: 240px;
+    white-space: nowrap;
+}
+.duedate-container {
+    
+}
 .details-container button {
     background-color: var(--button-color);
     color: var(--button-font-color);
@@ -496,6 +504,34 @@ dialog {
     .details-dialog-info-container p {
         margin: 1rem;
         font-size: 1rem;
+    }
+    .item-container {
+        color: var(--task-font-color);
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #7aa1e6;
+        border-radius: 0.5rem;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem 2rem 1rem 1rem;
+        background: rgb(213,227,248);
+        background: radial-gradient(circle, rgba(213,227,248,1) 0%, rgba(185,198,217,1) 96%);
+    }
+    .left-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        margin-left: 50%;
+    }
+    .right-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        margin-left: 50%;
     }
   }
 
