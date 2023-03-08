@@ -18,8 +18,6 @@ body {
     padding: 0px;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
-    overflow-x: hidden;
     font-family: 'Cedarville Cursive', cursive;
     font-family: 'Roboto', sans-serif;
     width: 100vw;
@@ -32,6 +30,18 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+.header-title {
+    font-size: 1.5rem;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 .content {
     display: flex;
@@ -172,6 +182,8 @@ body {
     background-color: #78808e;
     width: 75vw;
     border: 1px solid black;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 #all-tasks {
     
@@ -421,79 +433,63 @@ dialog {
 
 @media (max-width: 750px) {
     .body {
-        overflow: scroll;
-    }
-    .content {
-        flex-direction: column;
-        justify-content: flex-start;
-        overflow: scroll;
-    }
-    .content-tasks {
-        width: 100vw;
-    }
-    .planning-projects-list {
 
     }
-    .header {
+    .content {
         display: flex;
-        align-items: center;
-        justify-content: center; 
-        text-align: center;
-    }
-    .header-title {
-        font-size: 1.5rem;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
     .content-planning {
-        text-align: center;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;
+        width: 100vw;
         overflow-x: hidden;
         overflow-y: auto;
     }
     .content-tasks {
-        overflow: scroll;
-    }
-    .planning-projects {
-        text-align: center;
-        width: 100%;
-    }
-    .planning-projects-list {
-        margin: 0px 0px 0px 0px;
-        width: 100%;
+        width: 100vw;
+        overflow-x: hidden;
+        overflow-y: auto;
     }
     .planning-add {
-        width: 100%;
-        margin-bottom: 2rem;
+        margin-bottom: 0px;
     }
-    .modal-content {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .modal-content-list {
+    #add-modal-project {
+        font-size: 1.5rem;
+        cursor: pointer;
+        background-color: #1d1e20;
+        color: var(--button-font-color);
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        height: 3rem;
         display: flex;
-        flex-direction: row;
-        justify-content: space-around;
+        justify-content: center;
         align-items: center;
-        width: 100%;
-        padding-left: 0px;
-        padding-right: 0px;
+        padding: 1rem;
+        margin: 1rem 1rem 1rem 1rem;
     }
-    #modal-content-form .form-group {
-        margin: auto;
+    #add-modal-task {
+        font-size: 1.5rem;
+        cursor: pointer;
+        background-color: #1d1e20;
+        color: var(--button-font-color);
+        border: 1px solid black;
+        border-radius: 0.5rem;
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        margin: 1rem 1rem 1rem 1rem;
+    }
+    .form-group {
+        width: 100%;
     }
   }
 
   @media (max-height: 750px) {
     body {
-        overflow: scroll;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
