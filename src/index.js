@@ -42,12 +42,13 @@ addProjectInLocalStorage(selectedProject.id, selectedProject);
 
 //hardcoding some projects and tasks to load the page up a bit
 //feel free to add/remove tasks and projects
-let currentDate = new Date().toJSON().slice(0, 10);
-console.log(currentDate);
 let projectOne = createProjectObject(2, "House chores");
-let projectTwo = createProjectObject(3, "Work assignment");
+let projectTwo = createProjectObject(3, "Work assignments");
 addProjectInLocalStorage(projectOne.id, projectOne);
 addProjectInLocalStorage(projectTwo.id, projectTwo);
+/*
+let currentDate = new Date().toJSON().slice(0, 10);
+console.log(currentDate);
 //let taskOne = createTaskObject(id, title, description, dueDate, inProject, isDone);
 let taskOne = createTaskObject(4, "Walk the dog", "He deserves a treat also", currentDate, "House chores", "no");
 let taskTwo = createTaskObject(5, "Clean the room", "Almost done. I'll mark this complete", currentDate, "House chores", "yes");
@@ -59,7 +60,7 @@ addTaskInLocalStorage(5, taskTwo);
 addTaskInLocalStorage(6, taskThree);
 addTaskInLocalStorage(7, taskFour) ;
 addTaskInLocalStorage(8, taskFive);
-
+*/
 
 //loading all tasks from all projects:
 loadTasks(0);
