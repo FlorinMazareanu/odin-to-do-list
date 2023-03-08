@@ -57,7 +57,7 @@ body {
     justify-content: space-between;
     align-items: flex-start;
     border-top: 1px solid var(--borders-color);
-    overflow-y: scroll;
+    overflow-y: auto;
     overflow-x: hidden;
 }
 #planning-home-h3 {
@@ -239,6 +239,11 @@ body {
 }
 .details-dialog {
     border-radius: 0.5rem;
+    overflow-x: hidden;
+    border-radius: 0.5rem;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 .details-dialog-header-container {
 
@@ -258,19 +263,22 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     background-color: #78808E;
     height: 100%;
     color: black;
     font-size: 2rem;
     font-weight: bold;
+    width: 100%;
+}
+.details-dialog-info-container p {
+    margin: 1rem;
 }
 .details-dialog-info-left-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin: 1rem;
     background-color: #78808E;
 }
 .details-dialog-info-right-container {
@@ -278,7 +286,6 @@ body {
     flex-direction: column;   
     align-items: flex-start;
     justify-content: center;
-    margin: 1rem;
     background-color: #78808E;
 }
 .details-container dialog {
@@ -486,6 +493,10 @@ dialog {
     .form-group {
         width: 100%;
     }
+    .details-dialog-info-container p {
+        margin: 1rem;
+        font-size: 1rem;
+    }
   }
 
   @media (max-height: 750px) {
@@ -501,5 +512,9 @@ dialog {
     .content-tasks {
         overflow-x: hidden;
         overflow-y: auto;
+    }
+    .details-dialog-info-container p {
+        margin: 1rem;
+        font-size: 1rem;
     }
   }
