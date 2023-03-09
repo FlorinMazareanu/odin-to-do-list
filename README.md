@@ -1,4 +1,4 @@
-# to-do-list\
+# to-do-list
 run it locally like this:\
 nodemon --watch src --exec "npm run build"\
 if that won't work, try this:\
