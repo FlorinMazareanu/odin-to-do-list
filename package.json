@@ -1,5 +1,5 @@
 {
-  "name": "odin-to-do-list",
+  "name": "to-do-list",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -98,12 +98,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FlorinMazareanu/odin-to-do-list.git"
+    "url": "git+https://github.com/FlorinMazareanu/to-do-list.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FlorinMazareanu/odin-to-do-list/issues"
+    "url": "https://github.com/FlorinMazareanu/to-do-list/issues"
   },
-  "homepage": "https://github.com/FlorinMazareanu/odin-to-do-list#readme"
+  "homepage": "https://github.com/FlorinMazareanu/to-do-list"
 }
